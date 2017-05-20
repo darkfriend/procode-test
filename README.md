@@ -22,3 +22,5 @@ The package can be installed via composer:
 $ composer install
 $ bower install
 ```
+
+Указать root директорию web

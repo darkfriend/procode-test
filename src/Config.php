@@ -70,12 +70,22 @@ class Config
         return $maxSize;
     }
 
+    /**
+     * Возвращает путь до раздела загрузки pdf-файлов
+     * @param bool $abs - вернуть абсолютный путь
+     * @return string
+     */
     public function getUploadDir($abs=false) {
         $uploadFolder = 'uploads/pdf';
         if($abs) $uploadFolder = $_SERVER['DOCUMENT_ROOT'] . '/'. $uploadFolder . '/';
         return $uploadFolder;
     }
 
+    /**
+     * Возвращает путь до раздела загрузки jpeg-файлов
+     * @param bool $abs - вернуть абсолютный путь
+     * @return string
+     */
     public function getJpegDir($abs=false) {
         $uploadFolder = 'uploads/jpeg';
         if($abs) $uploadFolder = $_SERVER['DOCUMENT_ROOT'] . '/'. $uploadFolder . '/';

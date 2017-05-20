@@ -8,8 +8,7 @@
 
 include_once __DIR__.'/../../vendor/autoload.php';
 
-use Darkfriend\PdfToImage\Config,
-    Darkfriend\PdfToImage\Exceptions\PdfExistException;
+use Darkfriend\PdfToImage\Config;
 $config = Config::getInstance();
 
 $error = true;
@@ -51,7 +50,7 @@ if ($_FILES['file'])
         if(!is_dir($targetPath)) {
             @mkdir($targetPath,0777,true);
         }
-//        $targetFile =  $targetPath. $arFile['name'];
+
         $fileHash = md5($arFile['name']);
         $fileName = $fileHash.'.pdf';
         $targetFile = $targetPath.$fileName;

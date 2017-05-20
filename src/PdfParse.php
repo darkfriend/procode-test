@@ -11,10 +11,9 @@ use Spatie\PdfToImage\Pdf;
 
 class PdfParse extends Pdf
 {
-    public $keySession = 'pdfToImg';
+    public $keySession;
 
-    public function __construct($pdfFile, $keySession=null)
-    {
+    public function __construct($pdfFile, $keySession=null) {
         parent::__construct($pdfFile);
         if(!$keySession) $keySession = md5(time());
         $this->keySession = $keySession;
@@ -22,16 +21,12 @@ class PdfParse extends Pdf
 
     /**
      * Процесс сохранения каждой странице на диске
-     *
-     * @param string $directory
-     * @param string $prefix
-     *
-     * @return array $files the paths to the created images
+     * @param string $directory - путь до директории сохранения
+     * @param string $prefix - префикс для постраничных картинок
+     * @return array $files относительные пути до файлов
      */
-    public function processSave($directory, $prefix='page')
-    {
+    public function processSave($directory, $prefix='page') {
         $numberOfPages = $this->getNumberOfPages();
-//        $directory = $_SERVER['DOCUMENT_ROOT'].'/uploads/jpg/'.$directory;
         if ($numberOfPages === 0)
             return [];
 

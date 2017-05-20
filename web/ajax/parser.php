@@ -17,8 +17,7 @@ session_start();
 $error = true;
 $msg = '';
 $arFileSave = [];
-//$_SERVER['REQUEST_METHOD']=='POST' &&
-//die($_REQUEST['file']);
+
 if($_REQUEST['file']) {
     try {
         $fileHash = $_REQUEST['file'];
@@ -42,4 +41,3 @@ die(json_encode(array_merge([
     'status' => ($error?'error':'success'),
     'msg' => ($error?$msg?$msg:'Неизвестная ошибка':'')
 ],$arFileSave), JSON_UNESCAPED_UNICODE));
-?>

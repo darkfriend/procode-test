@@ -1,0 +1,30 @@
+#ddForm{
+    border: 2px dashed rgba(0,0,0,0.3);
+    background: transparent;
+}
+#fileList{
+    display: none;
+}
+.loader{
+    background: url('../img/loader.gif') no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+.loader.success{
+    background: none;
+    color: limegreen;
+}
+.right{
+    float: right;
+    width: 15%;
+}
+.list-group-item .left{
+    float: left;
+    width: 80%;
+}
+.list-group-item{
+    display: table;
+    width: 100%;
+}

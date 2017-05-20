@@ -1,0 +1,5 @@
+composer.lock
+vendor
+web/bower_components
+uploads
+node_modules
